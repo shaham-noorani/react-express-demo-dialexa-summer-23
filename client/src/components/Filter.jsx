@@ -4,8 +4,6 @@ export default function Filter(props) {
       <div key={item} style={{ marginBottom: "20px" }}>
         <input
           type="radio"
-          name={item}
-          id={item}
           checked={item === props.city}
           onChange={(e) => props?.setCity(item)}
         />
