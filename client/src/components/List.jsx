@@ -17,7 +17,7 @@ export default function List({ city }) {
   return (
     <div>
       {breweries.map((brewery) => {
-        <Card key={brewery.id} brewery={brewery}></Card>;
+        return <Card key={brewery.id} brewery={brewery}></Card>;
       })}
     </div>
   );
