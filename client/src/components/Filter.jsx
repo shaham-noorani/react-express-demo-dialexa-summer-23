@@ -5,7 +5,7 @@ export default function Filter(props) {
         <input
           type="radio"
           checked={item === props.city}
-          onChange={(e) => props?.setCity(item)}
+          onChange={(e) => props.setCity(item)}
         />
         {item}
       </div>

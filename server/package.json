@@ -1,6 +1,6 @@
 {
   "name": "server",
-  "main": "index.js",
+  "main": "src/server.ts",
   "scripts": {
     "start": "nodemon src/server.ts"
   },

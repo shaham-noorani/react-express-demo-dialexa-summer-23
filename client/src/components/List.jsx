@@ -5,13 +5,23 @@ export default function List({ city }) {
   const [breweries, setBreweries] = useState([]);
 
   useEffect(() => {
-    fetch(`https://api.openbrewerydb.org/v1/breweries?by_city=${city}`)
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setBreweries(data);
-      });
+    if (city === "") {
+      fetch(`http://localhost:3001/api/allBreweries`)
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          setBreweries(data);
+        });
+    } else {
+      fetch(`http://localhost:3001/api/breweriesByCity/${city}`)
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          setBreweries(data);
+        });
+    }
   }, [city]);
 
   return (
